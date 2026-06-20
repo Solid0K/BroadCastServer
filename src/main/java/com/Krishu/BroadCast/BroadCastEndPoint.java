@@ -33,6 +33,11 @@ public class BroadCastEndPoint {
         }
         if(message.startsWith("/msg ")){
             String[] parts=message.split(" ",3);
+            if(parts.length < 3){
+                sender.getAsyncRemote()
+                        .sendText("Usage: /msg <user> <message>");
+                return;
+            }
             String username=parts[1];
             String messageToSend=parts[2];
             Session receiver=getReceiver(username);
