@@ -17,7 +17,7 @@ public class BroadCastClient {
 
     @OnMessage
     public void onMessage(String message){
-        System.out.println("Received message: "+message);
+        System.out.println(message);
     }
 
     public void send(String message) throws IOException {
